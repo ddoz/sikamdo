@@ -196,7 +196,7 @@ class AdminProposal extends Component
             'website' => $this->website,
             'status' => 'draft',
             'user_id' => Auth::id(),
-            'kode_identifikasi'=> 'SIKAMDO_'.Str::random(20)
+            'kode_identifikasi'=> 'SIKEPLU_'.Str::random(20)
         );
 
         if($this->kartu_identitas_pic != null) {

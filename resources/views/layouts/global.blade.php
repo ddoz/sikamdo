@@ -9,7 +9,7 @@
     <meta name="author" content="">
     <link href="https://fonts.googleapis.com/css?family=Raleway:100,300,400,500,700,900" rel="stylesheet">
 
-    <title>SIKAMDO LAMPUNG UTARA</title>
+    <title>SIKEPLU LAMPUNG UTARA</title>
 <!--
 SOFTY PINKO
 https://templatemo.com/tm-535-softy-pinko
@@ -45,8 +45,8 @@ https://templatemo.com/tm-535-softy-pinko
                     <nav class="main-nav">
                         <!-- ***** Logo Start ***** -->
                         <a href="#" class="logo">
-                            <img width="30" src="{{url('assets/assets/images/logo.png')}}" alt="SIKAMDO LAMPUNG TENGAH"/>
-                            SIKAMDO LAMPUNG UTARA
+                            <img width="30" src="{{url('assets/assets/images/logo.png')}}" alt="SIKEPLU LAMPUNG TENGAH"/>
+                            SIKEPLU LAMPUNG UTARA
                         </a>
                         <!-- ***** Logo End ***** -->
                         <!-- ***** Menu Start ***** -->
