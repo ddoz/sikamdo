@@ -6,6 +6,8 @@ use Livewire\Component;
 use Livewire\WithFileUploads;
 use App\Models\Proposal;
 use App\Models\TipeMedia;
+use App\Models\KriteriaPenilaian;
+use App\Models\KriteriaPenilaianDetail;
 use Illuminate\Support\Str;
 use Auth;
 
@@ -17,6 +19,7 @@ class UserProposal extends Component
     public $isOpen = 0;
     public $mode = 'insert';
     public $isOpenBerkas = 0;
+    public $isOpenSyarat = 0;
     public $tipemedia_id;
     public $nama_media;
     public $nama_pic;
@@ -103,6 +106,26 @@ class UserProposal extends Component
     public function closeModalBerkas()
     {
         $this->isOpenBerkas = false;
+    }
+
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
+    public function openModalSyarat()
+    {
+        $this->isOpenSyarat = true;
+    }
+
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
+    public function closeModalSyarat()
+    {
+        $this->isOpenSyarat = false;
     }
 
     /**
@@ -278,6 +301,11 @@ class UserProposal extends Component
         $this->sertifikat_kemenkumham = $us->sertifikat_kemenkumham;
         $this->sertifikat_dewan_pers = $us->sertifikat_dewan_pers;
         $this->openModalBerkas();
+    }
+
+    public function persyaratan($id) {
+        $kp = KriteriaPenilaian::where('tipemedia_id',$id);
+        $this->openModalSyarat();
     }
 
     /**

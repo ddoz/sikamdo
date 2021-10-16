@@ -76,9 +76,9 @@
                                 </td>
                                 <td class="px-5 py-5 bg-white text-sm @if (!$loop->last) border-gray-200 border-b @endif">
                                     @if($tm->status_bukti_tayang=='0')
-                                        <span class="bg-yellow-400 px-5 py-5">Belum Upload</span>
+                                        Belum Upload
                                     @else
-                                        <span class="bg-green-400 px-5 py-5">Sudah Upload</span>
+                                        Sudah Upload
                                     @endif
                                 </td>
                                 <td class="px-5 py-5 bg-white text-sm @if (!$loop->last) border-gray-200 border-b @endif">
@@ -98,6 +98,7 @@
                                     <div class="inline-block whitespace-no-wrap">
                                         <button wire:click="berkas({{ $tm->id }})" class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">Berkas</button>
                                         <a href="{{route('bukti_tayang',['id'=>$tm->id])}}" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Bukti Tayang</a>
+                                        <a href="{{route('persyaratan',['id'=>$tm->id])}}" class="bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-2 px-4 rounded">Persyaratan</a>
                                         <button wire:click="$emit('triggerDelete',{{ $tm->id }})" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">Delete</button>
                                     </div>
                                 </td>

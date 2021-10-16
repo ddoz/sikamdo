@@ -29,14 +29,19 @@ Route::get('/signin', [HomeController::class, 'signin']);
 
 Route::get('/dashboard', [DashboardController::class, 'index'])->middleware(['auth'])->name('dashboard');
 Route::get('/pengajuan_proposal', App\Http\Livewire\UserProposal::class)->middleware(['auth'])->name('pengajuan_proposal');
+Route::get('/permohonan_kerjasama', App\Http\Livewire\UserProposal::class)->middleware(['auth'])->name('permohonan_kerjasama');
 Route::get('/pengiriman_bukti', App\Http\Livewire\UserBuktiTayang::class)->middleware(['auth'])->name('pengiriman_bukti');
 Route::middleware(['auth'])->get('/kirim_bukti_tayang/{id}', App\Http\Livewire\UserKirimBuktiTayang::class)->name('kirim_bukti_tayang');
+Route::middleware(['auth'])->get('/isi_syarat/{id}', App\Http\Livewire\UserIsiPersyaratan::class)->name('isi_syarat');
 
 //ADMIN
 Route::middleware(['admin'])->get('/tipe_media', App\Http\Livewire\Tipemedias::class)->name('tipe_media');
+Route::middleware(['admin'])->get('/kriteria_penilaian', App\Http\Livewire\FormulirPersyaratan::class)->name('kriteria_penilaian');
 Route::middleware(['admin'])->get('/proposal', App\Http\Livewire\AdminProposal::class)->name('proposal');
 Route::middleware(['admin'])->get('/formulir_buktitayang/{id}', App\Http\Livewire\FormulirBuktiTayangs::class)->name('formulir_buktitayang');
+Route::middleware(['admin'])->get('/detail_kriteria/{id}', App\Http\Livewire\FormulirPersyaratanDetail::class)->name('detail_kriteria');
 Route::middleware(['admin'])->get('/bukti_tayang/{id}', App\Http\Livewire\AdminBuktiTayang::class)->name('bukti_tayang');
+Route::middleware(['admin'])->get('/persyaratan/{id}', App\Http\Livewire\AdminPersyaratan::class)->name('persyaratan');
 Route::middleware(['admin'])->get('/pengiriman', App\Http\Livewire\Tipemedias::class)->name('pengiriman');
 Route::middleware(['admin'])->get('/users', App\Http\Livewire\Users::class)->name('users');
 Route::middleware(['admin'])->get('/jadwal', App\Http\Livewire\AdminJadwal::class)->name('jadwal');

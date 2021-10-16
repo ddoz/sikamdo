@@ -72,6 +72,7 @@
                                 </td>
                                 <td class="px-5 py-5 bg-white text-sm @if (!$loop->last) border-gray-200 border-b @endif text-right">
                                     <div class="inline-block whitespace-no-wrap">
+                                        <a href="{{route('isi_syarat',['id'=>$tm->id])}}" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">Pengisian Persyaratan</a>
                                         <button wire:click="berkas({{ $tm->id }})" class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">Berkas</button>
                                         @if($tm->status=='draft')
                                         <button wire:click="edit({{ $tm->id }})" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Edit</button>
@@ -342,6 +343,42 @@
                                 </span>
                                 <span class="mt-3 flex w-full sm:mt-0 sm:w-auto">
                                     <button wire:click="closeModal()" type="button" class="inline-flex bg-white hover:bg-gray-200 border border-gray-300 text-gray-500 font-bold py-2 px-4 rounded">Cancel</button>
+                                </span>
+                                </div>
+                            </form> 
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    @endif
+
+    @if($isOpenSyarat)
+        <div class="fixed z-100 w-full h-full bg-gray-500 opacity-75 top-0 left-0"></div>
+        <div class="fixed z-101 w-full h-full top-0 left-0 overflow-y-auto">
+            <div class="table w-full h-full py-6">
+                <div class="table-cell text-center align-middle">
+                    <div class="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                        <div class="bg-white rounded-lg text-left overflow-hidden shadow-xl">
+                            <form>
+                                <div class="px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
+                                    <div class="flex flex-wrap -mx-3 mb-6">
+                                        <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+                                            <label for="alamatredaksi2Input" class="block text-gray-700 text-sm font-bold mb-2">Alamat Redaksi 2:</label>
+                                            <input type="text" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="alamatredaksi2Input" placeholder="Enter Alamat Redaksi 2" wire:model="alamat_redaksi_2">
+                                            @error('alamat_redaksi_2') <span class="text-red-500">{{ $message }}</span>@enderror
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
+                                    
+                                </div>
+                                <div class="px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse">
+                                <span class="flex w-full sm:ml-3 sm:w-auto">
+                                    <button wire:click.prevent="store()" type="button" class="inline-flex bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Save</button>
+                                </span>
+                                <span class="mt-3 flex w-full sm:mt-0 sm:w-auto">
+                                    <button wire:click="closeModalSyarat()" type="button" class="inline-flex bg-white hover:bg-gray-200 border border-gray-300 text-gray-500 font-bold py-2 px-4 rounded">Cancel</button>
                                 </span>
                                 </div>
                             </form> 
