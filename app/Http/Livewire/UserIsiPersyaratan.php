@@ -53,7 +53,7 @@ class UserIsiPersyaratan extends Component
     }
 
     public function back() {
-        return redirect()->to('/pengiriman_bukti');
+        return redirect()->to('/pengajuan_proposal');
     }
 
     /**
@@ -70,6 +70,7 @@ class UserIsiPersyaratan extends Component
 
         $form = KriteriaPenilaian::select(['kriteria_penilaian_details.*'])->join("kriteria_penilaian_details","kriteria_penilaian_details.kriteria_penilaian_id","kriteria_penilaians.id")->where('tipemedia_id',$this->tipemedia_id)->get();
         $err = 0;
+        $fail = 1;
         foreach($form as $fbt) {
             if(count($this->inputs)>0) {
                 $input = $this->inputs["id_".$fbt->kriteria_penilaian_id];
