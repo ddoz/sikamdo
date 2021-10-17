@@ -57,7 +57,7 @@
                         @foreach($proposals as $tm) 
                             <tr>
                                 <td class="px-5 py-5 bg-white text-sm @if (!$loop->last) border-gray-200 border-b @endif">
-                                    {{ $tm->tipemedia->nama }}
+                                    {{ @$tm->tipemedia->nama }}
                                 </td>
                                 <td class="px-5 py-5 bg-white text-sm @if (!$loop->last) border-gray-200 border-b @endif">
                                     {{ $tm->nama_media }}
