@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\KriteriaPenilaianDetail;
+use App\Models\TipeMedia;
 
 class KriteriaPenilaian extends Model
 {
@@ -15,7 +16,7 @@ class KriteriaPenilaian extends Model
     ];
 
     public function tipemedia() {
-        return $this->belongsTo('App\Models\TipeMedia');
+        return $this->belongsTo(TipeMedia::class);
     }
 
     /**
