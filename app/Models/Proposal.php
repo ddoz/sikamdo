@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\TipeMedia;
 
 class Proposal extends Model
 {
@@ -37,6 +38,6 @@ class Proposal extends Model
     ];
 
     public function tipemedia() {
-        return $this->belongsTo('App\Models\Tipemedia');
+        return $this->belongsTo(Tipemedia::class);
     }
 }
