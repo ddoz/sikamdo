@@ -93,9 +93,10 @@ class FormulirPersyaratan extends Component
      */
     public function edit($id)
     {
-        $tm = TipeMedia::findOrFail($id);
-        $this->tipemedia_id = $id;
-        $this->nama = $tm->nama;
+        $tm = KriteriaPenilaian::findOrFail($id);
+        $this->formulir_id = $id;
+        $this->tipemedia_id = $tm->tipemedia_id;
+        $this->nama_kriteria = $tm->nama_kriteria;
         $this->openModal();
     }
 
@@ -107,7 +108,11 @@ class FormulirPersyaratan extends Component
     public function delete($id)
     {
         $this->tipemedia_id = $id;
-        TipeMedia::find($id)->delete();
-        session()->flash('message', 'Tipe Media deleted successfully.');
+        try {
+            KriteriaPenilaian::find($id)->delete();
+            session()->flash('message', 'Kriteria deleted successfully.');
+        } catch(\Illuminate\Database\QueryException $e) {
+            session()->flash('message', 'Kriteria cannot be deleted.');
+        }
     }
 }
