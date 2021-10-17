@@ -264,6 +264,56 @@ class UserProposal extends Component
      *
      * @var array
      */
+
+    public function updateberkas()
+    {
+        $this->validate([
+            'kartu_identitas_pic'=>'image', //file
+            'sk_pic'=>'mimes:pdf', //file
+            'surat_permohonan_kerjasama'=>'mimes:pdf', //file
+            'proposal_penawaran'=>'mimes:pdf', //file
+            'siup_situ'=>'mimes:pdf', //file
+            'npwp'=>'image', //file
+            'sertifikat_kemenkumham'=>'mimes:pdf', //file
+            'sertifikat_dewan_pers'=>'mimes:pdf', //file
+        ]);
+        
+        if($this->kartu_identitas_pic != "") {
+            $data['kartu_identitas_pic'] = $this->kartu_identitas_pic->store('public/berkas_proposal');
+        }
+        if($this->sk_pic != "") {
+            $data['sk_pic'] = $this->sk_pic->store('public/berkas_proposal');
+        }
+        if($this->surat_permohonan_kerjasama != "") {
+            $data['surat_permohonan_kerjasama'] = $this->surat_permohonan_kerjasama->store('public/berkas_proposal');
+        }
+        if($this->proposal_penawaran != "") {
+            $data['proposal_penawaran'] = $this->proposal_penawaran->store('public/berkas_proposal');
+        }
+        if($this->siup_situ != "") {
+            $data['siup_situ'] = $this->siup_situ->store('public/berkas_proposal');
+        }
+        if($this->npwp != "") {
+            $data['npwp'] = $this->npwp->store('public/berkas_proposal');
+        }
+        if($this->sertifikat_kemenkumham != "") {
+            $data['sertifikat_kemenkumham'] = $this->sertifikat_kemenkumham->store('public/berkas_proposal');
+        }
+        if($this->sertifikat_dewan_pers != "") {
+            $data['sertifikat_dewan_pers'] = $this->sertifikat_dewan_pers->store('public/berkas_proposal');
+        }
+
+        $us = Proposal::updateOrCreate(['id' => $this->proposal_id],$data);
+        session()->flash('message', $this->proposal_id ? 'Proposal updated successfully.' : 'Proposal created successfully.');
+        $this->closeModalBerkas();
+        $this->resetInputFields();
+    }
+
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
     public function edit($id)
     {
         $us = Proposal::findOrFail($id);

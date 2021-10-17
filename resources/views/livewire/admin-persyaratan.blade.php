@@ -72,6 +72,8 @@
                                 class="px-5 py-3 border-b-2 border-black bg-black text-left text-xs font-semibold text-white uppercase tracking-wider">
                                 {{ __('Nilai') }}
                             </th>
+                            <th
+                                class="px-5 py-3 border-b-2 border-black bg-black text-left text-xs font-semibold text-white uppercase tracking-wider"></th>
                         </tr>
                     </thead>
                     <tbody>
@@ -81,14 +83,17 @@
                         @foreach($persyaratan as $tm) 
                             <tr>
                                 <td class="px-5 py-5 bg-white text-sm @if (!$loop->last) border-gray-200 border-b @endif">
-                                    {{ $tm->kriteriadetail->kriteria_penilaian->nama_kriteria }}
+                                    {{ @$tm->kriteriadetail->kriteria_penilaian->nama_kriteria }}
                                 </td>
                                 <td class="px-5 py-5 bg-white text-sm @if (!$loop->last) border-gray-200 border-b @endif">
-                                     {{$tm->kriteriadetail->nama_penilaian}}
+                                     {{@$tm->kriteriadetail->nama_penilaian}}
                                 </td>
                                
                                 <td class="px-5 py-5 bg-white text-sm @if (!$loop->last) border-gray-200 border-b @endif">
-                                     {{$tm->kriteriadetail->nilai}}
+                                     {{@$tm->kriteriadetail->nilai}}
+                                </td>
+                                <td class="px-5 py-5 bg-white text-sm @if (!$loop->last) border-gray-200 border-b @endif">
+
                                 </td>
                             </tr>
 
@@ -100,7 +105,20 @@
                     <tfoot>
                         <tr>
                             <td class="px-5 py-5 bg-white text-semibold" colspan="2">Total</td>
-                            <td class="px-5 py-3 border-b-2  border-black bg-green-300 text-left text-xs font-bold text-white uppercase tracking-wider">{{$nilai_total}}</td>
+                            <td class="px-5 py-5 bg-white text-sm border-gray-200 border-b">{{$nilai_total}}</td>
+                            <td class="px-5 py-3 border-b-2  border-black bg-green-300 text-left text-xs font-bold text-white uppercase tracking-wider">
+                                @php
+                                    if($nilai_total <= 100) {
+                                        "Rp. 4.000.000";
+                                    }
+                                    if($nilai_total <= 90) {
+                                        "Rp.3.000.000";
+                                    }
+                                    if($nilai_total <= 80) {
+                                        "Rp.2.500.000";
+                                    }
+                                @endphp
+                            </td>
                         </tr>
                     </tfoot>
                 </table>

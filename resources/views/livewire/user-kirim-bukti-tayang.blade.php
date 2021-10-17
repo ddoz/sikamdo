@@ -82,11 +82,11 @@
                         @foreach($buktitayang as $tm) 
                             <tr>
                                 <td class="px-5 py-5 bg-white text-sm @if (!$loop->last) border-gray-200 border-b @endif">
-                                    {{ $tm->formula->kolom }}
+                                    {{ @$tm->formula->kolom }}
                                 </td>
                                 <td class="px-5 py-5 bg-white text-sm @if (!$loop->last) border-gray-200 border-b @endif">
                                     
-                                    @if($tm->formula->tipe=='file')
+                                    @if(@$tm->formula->tipe=='file')
                                     <a href="{{asset('storage/'.$tm->value)}}" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded" target="_blank">Lihat Dokumen</a>
                                     @else
                                      {{$tm->value}}

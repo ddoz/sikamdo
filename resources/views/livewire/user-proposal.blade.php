@@ -50,7 +50,7 @@
                         @foreach($proposals as $tm) 
                             <tr>
                                 <td class="px-5 py-5 bg-white text-sm @if (!$loop->last) border-gray-200 border-b @endif">
-                                    {{ $tm->tipemedia->nama }}
+                                    {{ @$tm->tipemedia->nama }}
                                 </td>
                                 <td class="px-5 py-5 bg-white text-sm @if (!$loop->last) border-gray-200 border-b @endif">
                                     {{ $tm->nama_media }}
@@ -99,7 +99,7 @@
                                 <div class="px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
                                     <div class="flex flex-wrap -mx-3 mb-6">
                                         <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
-                                            <label for="kartuindentitasInput" class="block text-gray-700 text-sm font-bold mb-2">Kartu Identitas PIC:</label>
+                                            <label for="kartuindentitasInput" class="block text-gray-700 text-sm font-bold mb-2">Kartu Identitas PIC (JPG Max 1MB):</label>
                                             <img width="200" src="{{asset('storage/'.str_replace('public/','',$kartu_identitas_pic))}}" alt="">
                                             <input type="file" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="kartuindentitasInput" wire:model="kartu_identitas_pic">
                                             @error('kartu_identitas_pic') <span class="text-red-500">{{ $message }}</span>@enderror
@@ -107,7 +107,7 @@
                                     </div>
                                     <div class="flex flex-wrap -mx-3 mb-6">
                                         <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
-                                            <label for="skpicInput" class="block text-gray-700 text-sm font-bold mb-2">Kartu Identitas PIC:</label>
+                                            <label for="skpicInput" class="block text-gray-700 text-sm font-bold mb-2">Kartu Identitas PIC (PDF Max 1MB):</label>
                                             <a href="{{asset('storage/'.str_replace('public/','',$sk_pic))}}" class="inline-flex bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" target="_blank">Lihat Dokumen</a>
                                             <input type="file" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="skpicInput" wire:model="sk_pic">
                                             @error('sk_pic') <span class="text-red-500">{{ $message }}</span>@enderror
@@ -115,7 +115,7 @@
                                     </div>
                                     <div class="flex flex-wrap -mx-3 mb-6">
                                         <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
-                                            <label for="skpicInput" class="block text-gray-700 text-sm font-bold mb-2">Surat Permohonan Kerjasama:</label>
+                                            <label for="skpicInput" class="block text-gray-700 text-sm font-bold mb-2">Surat Permohonan Kerjasama (PDF Max 1MB):</label>
                                             <a href="{{asset('storage/'.str_replace('public/','',$surat_permohonan_kerjasama))}}" class="inline-flex bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" target="_blank">Lihat Dokumen</a>
                                             <input type="file" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="skpicInput" wire:model="surat_permohonan_kerjasama">
                                             @error('surat_permohonan_kerjasama') <span class="text-red-500">{{ $message }}</span>@enderror
@@ -123,7 +123,7 @@
                                     </div>
                                     <div class="flex flex-wrap -mx-3 mb-6">
                                         <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
-                                            <label for="skpicInput" class="block text-gray-700 text-sm font-bold mb-2">Proposal Penawaran:</label>
+                                            <label for="skpicInput" class="block text-gray-700 text-sm font-bold mb-2">Proposal Penawaran (PDF Max 1MB):</label>
                                             <a href="{{asset('storage/'.str_replace('public/','',$proposal_penawaran))}}" class="inline-flex bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" target="_blank">Lihat Dokumen</a>
                                             <input type="file" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="skpicInput" wire:model="proposal_penawaran">
                                             @error('proposal_penawaran') <span class="text-red-500">{{ $message }}</span>@enderror
@@ -131,7 +131,7 @@
                                     </div>
                                     <div class="flex flex-wrap -mx-3 mb-6">
                                         <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
-                                            <label for="skpicInput" class="block text-gray-700 text-sm font-bold mb-2">SIUP/SITU:</label>
+                                            <label for="skpicInput" class="block text-gray-700 text-sm font-bold mb-2">SIUP/SITU (PDF Max 1MB):</label>
                                             <a href="{{asset('storage/'.str_replace('public/','',$siup_situ))}}" class="inline-flex bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" target="_blank">Lihat Dokumen</a>
                                             <input type="file" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="skpicInput" wire:model="siup_situ">
                                             @error('siup_situ') <span class="text-red-500">{{ $message }}</span>@enderror
@@ -139,7 +139,7 @@
                                     </div>
                                     <div class="flex flex-wrap -mx-3 mb-6">
                                         <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
-                                            <label for="skpicInput" class="block text-gray-700 text-sm font-bold mb-2">NPWP:</label>
+                                            <label for="skpicInput" class="block text-gray-700 text-sm font-bold mb-2">NPWP (JPG Max 1MB):</label>
                                             <img width="300" src="{{asset('storage/'.str_replace('public/','',$npwp))}}" alt="">
                                             <input type="file" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="skpicInput" wire:model="npwp">
                                             @error('npwp') <span class="text-red-500">{{ $message }}</span>@enderror
@@ -147,7 +147,7 @@
                                     </div>
                                     <div class="flex flex-wrap -mx-3 mb-6">
                                         <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
-                                            <label for="skpicInput" class="block text-gray-700 text-sm font-bold mb-2">Sertifikat KEMENKUMHAM:</label>
+                                            <label for="skpicInput" class="block text-gray-700 text-sm font-bold mb-2">Sertifikat KEMENKUMHAM (PDF Max 1MB):</label>
                                             <a href="{{asset('storage/'.str_replace('public/','',$sertifikat_kemenkumham))}}" class="inline-flex bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" target="_blank">Lihat Dokumen</a>
                                             <input type="file" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="skpicInput" wire:model="sertifikat_kemenkumham">
                                             @error('sertifikat_kemenkumham') <span class="text-red-500">{{ $message }}</span>@enderror
@@ -155,7 +155,7 @@
                                     </div>
                                     <div class="flex flex-wrap -mx-3 mb-6">
                                         <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
-                                            <label for="skpicInput" class="block text-gray-700 text-sm font-bold mb-2">Sertifikat Dewan PERS:</label>
+                                            <label for="skpicInput" class="block text-gray-700 text-sm font-bold mb-2">Sertifikat Dewan PERS (PDF Max 1MB):</label>
                                             <a href="{{asset('storage/'.str_replace('public/','',$sertifikat_dewan_pers))}}" class="inline-flex bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" target="_blank">Lihat Dokumen</a>
                                             <input type="file" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="skpicInput" wire:model="sertifikat_dewan_pers">
                                             @error('sertifikat_dewan_pers') <span class="text-red-500">{{ $message }}</span>@enderror
@@ -165,7 +165,7 @@
                                 </div>
                                 <div class="px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse">
                                     <span class="flex w-full sm:ml-3 sm:w-auto">
-                                        <button wire:click.prevent="store()" type="button" class="inline-flex bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Save</button>
+                                        <button wire:click.prevent="updateberkas()" type="button" class="inline-flex bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Save</button>
                                     </span>
                                     <span class="mt-3 flex w-full sm:mt-0 sm:w-auto">
                                         <button wire:click="closeModalBerkas()" type="button" class="inline-flex bg-white hover:bg-gray-200 border border-gray-300 text-gray-500 font-bold py-2 px-4 rounded">Cancel</button>
@@ -223,14 +223,14 @@
                                     </div>
                                     <div class="flex flex-wrap -mx-3 mb-6">
                                         <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
-                                            <label for="kartuidentitaspicInput" class="block text-gray-700 text-sm font-bold mb-2">Kartu Identitas PIC:</label>
+                                            <label for="kartuidentitaspicInput" class="block text-gray-700 text-sm font-bold mb-2">Kartu Identitas PIC (JPG Max 1MB):</label>
                                             <input type="file" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="kartuidentitaspicInput" wire:model="kartu_identitas_pic">
                                             @error('kartu_identitas_pic') <span class="text-red-500">{{ $message }}</span>@enderror
                                         </div>
                                     </div>
                                     <div class="flex flex-wrap -mx-3 mb-6">
                                         <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
-                                            <label for="skpicInput" class="block text-gray-700 text-sm font-bold mb-2">SK PIC:</label>
+                                            <label for="skpicInput" class="block text-gray-700 text-sm font-bold mb-2">SK PIC (PDF Max 1MB):</label>
                                             <input type="file" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="skpicInput" wire:model="sk_pic">
                                             @error('sk_pic') <span class="text-red-500">{{ $message }}</span>@enderror
                                         </div>
@@ -293,7 +293,7 @@
                                     </div>
                                     <div class="flex flex-wrap -mx-3 mb-6">
                                         <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
-                                            <label for="suratpermohonanInput" class="block text-gray-700 text-sm font-bold mb-2">Surat Permohonan Kerjasama:</label>
+                                            <label for="suratpermohonanInput" class="block text-gray-700 text-sm font-bold mb-2">Surat Permohonan Kerjasama (PDF Max 1MB):</label>
                                             <input type="file" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="suratpermohonanInput" wire:model="surat_permohonan_kerjasama">
                                             @error('surat_permohonan_kerjasama') <span class="text-red-500">{{ $message }}</span>@enderror
                                         </div>
@@ -307,28 +307,28 @@
                                     </div>
                                     <div class="flex flex-wrap -mx-3 mb-6">
                                         <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
-                                            <label for="sipuInput" class="block text-gray-700 text-sm font-bold mb-2">SIUP/SITU:</label>
+                                            <label for="sipuInput" class="block text-gray-700 text-sm font-bold mb-2">SIUP/SITU (PDF Max 1MB):</label>
                                             <input type="file" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="sipuInput" wire:model="siup_situ">
                                             @error('siup_situ') <span class="text-red-500">{{ $message }}</span>@enderror
                                         </div>
                                     </div>
                                     <div class="flex flex-wrap -mx-3 mb-6">
                                         <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
-                                            <label for="npwpInput" class="block text-gray-700 text-sm font-bold mb-2">NPWP:</label>
+                                            <label for="npwpInput" class="block text-gray-700 text-sm font-bold mb-2">NPWP (JPG Max 1MB):</label>
                                             <input type="file" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="npwpInput" wire:model="npwp">
                                             @error('npwp') <span class="text-red-500">{{ $message }}</span>@enderror
                                         </div>
                                     </div>
                                     <div class="flex flex-wrap -mx-3 mb-6">
                                         <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
-                                            <label for="kumhamInput" class="block text-gray-700 text-sm font-bold mb-2">Sertifikat KEMENKUMHAM:</label>
+                                            <label for="kumhamInput" class="block text-gray-700 text-sm font-bold mb-2">Sertifikat KEMENKUMHAM (PDF Max 1MB):</label>
                                             <input type="file" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="kumhamInput" wire:model="sertifikat_kemenkumham">
                                             @error('sertifikat_kemenkumham') <span class="text-red-500">{{ $message }}</span>@enderror
                                         </div>
                                     </div>
                                     <div class="flex flex-wrap -mx-3 mb-6">
                                         <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
-                                            <label for="persInput" class="block text-gray-700 text-sm font-bold mb-2">Sertifikat Dewan PERS:</label>
+                                            <label for="persInput" class="block text-gray-700 text-sm font-bold mb-2">Sertifikat Dewan PERS (PDF Max 1MB):</label>
                                             <input type="file" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="persInput" wire:model="sertifikat_dewan_pers">
                                             @error('sertifikat_dewan_pers') <span class="text-red-500">{{ $message }}</span>@enderror
                                         </div>
