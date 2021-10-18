@@ -91,17 +91,17 @@ class UserKirimBuktiTayang extends Component
                     "formula_id" => $fbt->id,
                     "value" => $input
                 );
-                $cek = BuktiTayang::where('formula_id',$fbt->id)
-                                ->where('proposal_id',$this->proposal_id);
+                // $cek = BuktiTayang::where('formula_id',$fbt->id)
+                //                 ->where('proposal_id',$this->proposal_id);
     
-                if($cek->exists()) {
-                    $cek = BuktiTayang::where('formula_id',$fbt->id)
-                                ->where('proposal_id',$this->proposal_id)
-                                ->update($arrToInsert);
+                // if($cek->exists()) {
+                //     $cek = BuktiTayang::where('formula_id',$fbt->id)
+                //                 ->where('proposal_id',$this->proposal_id)
+                //                 ->update($arrToInsert);
     
-                }else {
+                // }else {
                     $tm = BuktiTayang::create($arrToInsert);
-                }
+                // }
                 $fail = 0;
             }
         }
