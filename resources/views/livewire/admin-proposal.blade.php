@@ -117,62 +117,86 @@
                 <div class="table-cell text-center align-middle">
                     <div class="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                         <div class="bg-white rounded-lg text-left overflow-hidden shadow-xl">
+                        <div class="py-10">
+            <div class="px-4 pt-5 pb-4 sm:p-6 sm:pb-4 inline-block min-w-full shadow rounded-lg overflow-hidden">
+                        <table class="w-full whitespace-no-wrapw-full whitespace-no-wrap">
+                        <thead>
+                            <tr>
+                            <th>Bukti Upload</th>
+                            <th>Komentar</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><label for="kartuindentitasInput" class="block text-gray-700 text-sm font-bold mb-2">Kartu Identitas PIC:</label>
+                                                <img width="200" src="{{asset('storage/'.str_replace('public/','',$kartu_identitas_pic))}}" alt=""></td>
+                                <td>
+                                    <textarea class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="komentarInput" placeholder="Isi Komentar" wire:model="komentar"></textarea>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td> <label for="skpicInput" class="block text-gray-700 text-sm font-bold mb-2">Kartu Identitas PIC:</label>
+                                            <a href="{{asset('storage/'.str_replace('public/','',$sk_pic))}}" class="inline-flex bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" target="_blank">Lihat Dokumen</a></td>
+                                <td>
+                                    <textarea class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="komentarInput" placeholder="Isi Komentar" wire:model="komentar"></textarea>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td> <label for="skpicInput" class="block text-gray-700 text-sm font-bold mb-2">Surat Permohonan Kerjasama:</label>
+                                            <a href="{{asset('storage/'.str_replace('public/','',$surat_permohonan_kerjasama))}}" class="inline-flex bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" target="_blank">Lihat Dokumen</a></td>
+                                <td>
+                                    <textarea class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="komentarInput" placeholder="Isi Komentar" wire:model="komentar"></textarea>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td> <label for="skpicInput" class="block text-gray-700 text-sm font-bold mb-2">Proposal Penawaran:</label>
+                                            <a href="{{asset('storage/'.str_replace('public/','',$proposal_penawaran))}}" class="inline-flex bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" target="_blank">Lihat Dokumen</a></td>
+                                <td>
+                                    <textarea class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="komentarInput" placeholder="Isi Komentar" wire:model="komentar"></textarea>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td> <label for="skpicInput" class="block text-gray-700 text-sm font-bold mb-2">SIUP/SITU:</label>
+                                            <a href="{{asset('storage/'.str_replace('public/','',$siup_situ))}}" class="inline-flex bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" target="_blank">Lihat Dokumen</a></td>
+                                <td>
+                                    <textarea class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="komentarInput" placeholder="Isi Komentar" wire:model="komentar"></textarea>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td> <label for="skpicInput" class="block text-gray-700 text-sm font-bold mb-2">NPWP:</label>
+                                            <img width="300" src="{{asset('storage/'.str_replace('public/','',$npwp))}}" alt=""></td>
+                                <td>
+                                    <textarea class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="komentarInput" placeholder="Isi Komentar" wire:model="komentar"></textarea>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td> <label for="skpicInput" class="block text-gray-700 text-sm font-bold mb-2">Sertifikat KEMENKUMHAM:</label>
+                                            <a href="{{asset('storage/'.str_replace('public/','',$sertifikat_kemenkumham))}}" class="inline-flex bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" target="_blank">Lihat Dokumen</a></td>
+                                <td>
+                                    <textarea class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="komentarInput" placeholder="Isi Komentar" wire:model="komentar"></textarea>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td> <label for="skpicInput" class="block text-gray-700 text-sm font-bold mb-2">Sertifikat Dewan PERS:</label>
+                                            <a href="{{asset('storage/'.str_replace('public/','',$sertifikat_dewan_pers))}}" class="inline-flex bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" target="_blank">Lihat Dokumen</a></td>
+                                <td>
+                                    <textarea class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="komentarInput" placeholder="Isi Komentar" wire:model="komentar"></textarea>
+                                </td>
+                            </tr>
+                        </tbody>
+                        </table>
+</div>
+</div>
                             <form>
                                 <div class="px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
-                                    <div class="flex flex-wrap -mx-3 mb-6">
-                                        <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
-                                            <label for="kartuindentitasInput" class="block text-gray-700 text-sm font-bold mb-2">Kartu Identitas PIC:</label>
-                                            <img width="200" src="{{asset('storage/'.$kartu_identitas_pic)}}" alt="">
-                                        </div>
-                                    </div>
-                                    <div class="flex flex-wrap -mx-3 mb-6">
-                                        <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
-                                            <label for="skpicInput" class="block text-gray-700 text-sm font-bold mb-2">Kartu Identitas PIC:</label>
-                                            <a href="{{asset('storage/'.$sk_pic)}}" class="inline-flex bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" target="_blank">Lihat Dokumen</a>
-                                        </div>
-                                    </div>
-                                    <div class="flex flex-wrap -mx-3 mb-6">
-                                        <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
-                                            <label for="skpicInput" class="block text-gray-700 text-sm font-bold mb-2">Surat Permohonan Kerjasama:</label>
-                                            <a href="{{asset('storage/'.$surat_permohonan_kerjasama)}}" class="inline-flex bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" target="_blank">Lihat Dokumen</a>
-                                        </div>
-                                    </div>
-                                    <div class="flex flex-wrap -mx-3 mb-6">
-                                        <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
-                                            <label for="skpicInput" class="block text-gray-700 text-sm font-bold mb-2">Proposal Penawaran:</label>
-                                            <a href="{{asset('storage/'.$proposal_penawaran)}}" class="inline-flex bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" target="_blank">Lihat Dokumen</a>
-                                        </div>
-                                    </div>
-                                    <div class="flex flex-wrap -mx-3 mb-6">
-                                        <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
-                                            <label for="skpicInput" class="block text-gray-700 text-sm font-bold mb-2">SIUP/SITU:</label>
-                                            <a href="{{asset('storage/'.$siup_situ)}}" class="inline-flex bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" target="_blank">Lihat Dokumen</a>
-                                        </div>
-                                    </div>
-                                    <div class="flex flex-wrap -mx-3 mb-6">
-                                        <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
-                                            <label for="skpicInput" class="block text-gray-700 text-sm font-bold mb-2">NPWP:</label>
-                                            <img width="300" src="{{asset('storage/'.$npwp)}}" alt="">
-                                        </div>
-                                    </div>
-                                    <div class="flex flex-wrap -mx-3 mb-6">
-                                        <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
-                                            <label for="skpicInput" class="block text-gray-700 text-sm font-bold mb-2">Sertifikat KEMENKUMHAM:</label>
-                                            <a href="{{asset('storage/'.$sertifikat_kemenkumham)}}" class="inline-flex bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" target="_blank">Lihat Dokumen</a>
-                                        </div>
-                                    </div>
-                                    <div class="flex flex-wrap -mx-3 mb-6">
-                                        <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
-                                            <label for="skpicInput" class="block text-gray-700 text-sm font-bold mb-2">Sertifikat Dewan PERS:</label>
-                                            <a href="{{asset('storage/'.$sertifikat_dewan_pers)}}" class="inline-flex bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" target="_blank">Lihat Dokumen</a>
-                                        </div>
-                                    </div>
+                                   
                                     
                                 </div>
                                 <div class="px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse">
                                     
                                     <span class="mt-3 flex w-full sm:mt-0 sm:w-auto">
                                         <button wire:click="closeModalBerkas()" type="button" class="inline-flex bg-white hover:bg-gray-200 border border-gray-300 text-gray-500 font-bold py-2 px-4 rounded">Cancel</button>
+                                        <button wire:click="closeModalBerkas()" type="button" class="inline-flex bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Save</button>
                                     </span>
                                 </div>
                             </form> 
