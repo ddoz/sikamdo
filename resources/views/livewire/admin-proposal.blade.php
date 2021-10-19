@@ -135,7 +135,7 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td> <label for="skpicInput" class="block text-gray-700 text-sm font-bold mb-2">Kartu Identitas PIC:</label>
+                                <td> <label for="skpicInput" class="block text-gray-700 text-sm font-bold mb-2">SK PIC:</label>
                                             <a href="{{asset('storage/'.str_replace('public/','',$sk_pic))}}" class="inline-flex bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" target="_blank">Lihat Dokumen</a></td>
                                 <td>
                                     <textarea class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="komentarInput" placeholder="Isi Komentar" wire:model="komentar"></textarea>
