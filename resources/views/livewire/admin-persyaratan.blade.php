@@ -107,6 +107,7 @@
                             <td class="px-5 py-5 bg-white text-semibold" colspan="2">Total</td>
                             <td class="px-5 py-5 bg-white text-sm border-gray-200 border-b">{{$nilai_total}}</td>
                             <td class="px-5 py-3 border-b-2  border-black bg-green-300 text-left text-xs font-bold text-white uppercase tracking-wider">
+                            Rp. 6.000.000
                                 @php
                                     if($nilai_total <= 100) {
                                         "Rp. 4.000.000";
