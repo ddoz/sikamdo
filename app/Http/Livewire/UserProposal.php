@@ -44,6 +44,7 @@ class UserProposal extends Component
     public $user_id;
     public $status;
     public $keterangan;
+    public $komentar;
     public $proposal_id;
 
     public function render()

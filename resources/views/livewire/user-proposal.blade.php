@@ -96,73 +96,92 @@
                     <div class="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                         <div class="bg-white rounded-lg text-left overflow-hidden shadow-xl">
                             <form>
-                                <div class="px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
-                                    <div class="flex flex-wrap -mx-3 mb-6">
-                                        <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
-                                            <label for="kartuindentitasInput" class="block text-gray-700 text-sm font-bold mb-2">Kartu Identitas PIC (JPG Max 1MB):</label>
+                        <div class="py-10">
+            <div class="px-4 pt-5 pb-4 sm:p-6 sm:pb-4 inline-block min-w-full shadow rounded-lg overflow-hidden">
+                            <table class="w-full whitespace-no-wrapw-full whitespace-no-wrap">
+                        <thead>
+                            <tr>
+                            <th>Bukti Upload</th>
+                            <th>Komentar</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><label for="kartuindentitasInput" class="block text-gray-700 text-sm font-bold mb-2">Kartu Identitas PIC (JPG Max 1MB):</label>
                                             <img width="200" src="{{asset('storage/'.str_replace('public/','',$kartu_identitas_pic))}}" alt="">
                                             <input type="file" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="kartuindentitasInput" wire:model="kartu_identitas_pic">
-                                            @error('kartu_identitas_pic') <span class="text-red-500">{{ $message }}</span>@enderror
-                                        </div>
-                                    </div>
-                                    <div class="flex flex-wrap -mx-3 mb-6">
-                                        <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
-                                            <label for="skpicInput" class="block text-gray-700 text-sm font-bold mb-2">Kartu Identitas PIC (PDF Max 1MB):</label>
+                                            @error('kartu_identitas_pic') <span class="text-red-500">{{ $message }}</span>@enderror</td>
+                                <td>
+                                    <textarea readonly disabled class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="komentarInput" placeholder="Isi Komentar" wire:model="komentar"></textarea>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td> <label for="skpicInput" class="block text-gray-700 text-sm font-bold mb-2">SK PIC (PDF Max 1MB):</label>
                                             <a href="{{asset('storage/'.str_replace('public/','',$sk_pic))}}" class="inline-flex bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" target="_blank">Lihat Dokumen</a>
                                             <input type="file" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="skpicInput" wire:model="sk_pic">
-                                            @error('sk_pic') <span class="text-red-500">{{ $message }}</span>@enderror
-                                        </div>
-                                    </div>
-                                    <div class="flex flex-wrap -mx-3 mb-6">
-                                        <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
-                                            <label for="skpicInput" class="block text-gray-700 text-sm font-bold mb-2">Surat Permohonan Kerjasama (PDF Max 1MB):</label>
+                                            @error('sk_pic') <span class="text-red-500">{{ $message }}</span>@enderror</td>
+                                <td>
+                                    <textarea readonly disabled class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="komentarInput" placeholder="Isi Komentar" wire:model="komentar"></textarea>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td> <label for="skpicInput" class="block text-gray-700 text-sm font-bold mb-2">Surat Permohonan Kerjasama (PDF Max 1MB):</label>
                                             <a href="{{asset('storage/'.str_replace('public/','',$surat_permohonan_kerjasama))}}" class="inline-flex bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" target="_blank">Lihat Dokumen</a>
                                             <input type="file" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="skpicInput" wire:model="surat_permohonan_kerjasama">
-                                            @error('surat_permohonan_kerjasama') <span class="text-red-500">{{ $message }}</span>@enderror
-                                        </div>
-                                    </div>
-                                    <div class="flex flex-wrap -mx-3 mb-6">
-                                        <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
-                                            <label for="skpicInput" class="block text-gray-700 text-sm font-bold mb-2">Proposal Penawaran (PDF Max 1MB):</label>
+                                            @error('surat_permohonan_kerjasama') <span class="text-red-500">{{ $message }}</span>@enderror</td>
+                                <td>
+                                    <textarea readonly disabled class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="komentarInput" placeholder="Isi Komentar" wire:model="komentar"></textarea>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td> <label for="skpicInput" class="block text-gray-700 text-sm font-bold mb-2">Proposal Penawaran (PDF Max 1MB):</label>
                                             <a href="{{asset('storage/'.str_replace('public/','',$proposal_penawaran))}}" class="inline-flex bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" target="_blank">Lihat Dokumen</a>
                                             <input type="file" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="skpicInput" wire:model="proposal_penawaran">
-                                            @error('proposal_penawaran') <span class="text-red-500">{{ $message }}</span>@enderror
-                                        </div>
-                                    </div>
-                                    <div class="flex flex-wrap -mx-3 mb-6">
-                                        <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
-                                            <label for="skpicInput" class="block text-gray-700 text-sm font-bold mb-2">SIUP/SITU (PDF Max 1MB):</label>
+                                            @error('proposal_penawaran') <span class="text-red-500">{{ $message }}</span>@enderror</td>
+                                <td>
+                                    <textarea readonly disabled class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="komentarInput" placeholder="Isi Komentar" wire:model="komentar"></textarea>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td> <label for="skpicInput" class="block text-gray-700 text-sm font-bold mb-2">SIUP/SITU (PDF Max 1MB):</label>
                                             <a href="{{asset('storage/'.str_replace('public/','',$siup_situ))}}" class="inline-flex bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" target="_blank">Lihat Dokumen</a>
                                             <input type="file" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="skpicInput" wire:model="siup_situ">
-                                            @error('siup_situ') <span class="text-red-500">{{ $message }}</span>@enderror
-                                        </div>
-                                    </div>
-                                    <div class="flex flex-wrap -mx-3 mb-6">
-                                        <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
-                                            <label for="skpicInput" class="block text-gray-700 text-sm font-bold mb-2">NPWP (JPG Max 1MB):</label>
+                                            @error('siup_situ') <span class="text-red-500">{{ $message }}</span>@enderror</td>
+                                <td>
+                                    <textarea readonly disabled class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="komentarInput" placeholder="Isi Komentar" wire:model="komentar"></textarea>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td> <label for="skpicInput" class="block text-gray-700 text-sm font-bold mb-2">NPWP (JPG Max 1MB):</label>
                                             <img width="300" src="{{asset('storage/'.str_replace('public/','',$npwp))}}" alt="">
                                             <input type="file" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="skpicInput" wire:model="npwp">
-                                            @error('npwp') <span class="text-red-500">{{ $message }}</span>@enderror
-                                        </div>
-                                    </div>
-                                    <div class="flex flex-wrap -mx-3 mb-6">
-                                        <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
-                                            <label for="skpicInput" class="block text-gray-700 text-sm font-bold mb-2">Sertifikat KEMENKUMHAM (PDF Max 1MB):</label>
+                                            @error('npwp') <span class="text-red-500">{{ $message }}</span>@enderror</td>
+                                <td>
+                                    <textarea readonly disabled class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="komentarInput" placeholder="Isi Komentar" wire:model="komentar"></textarea>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td> <label for="skpicInput" class="block text-gray-700 text-sm font-bold mb-2">Sertifikat KEMENKUMHAM (PDF Max 1MB):</label>
                                             <a href="{{asset('storage/'.str_replace('public/','',$sertifikat_kemenkumham))}}" class="inline-flex bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" target="_blank">Lihat Dokumen</a>
                                             <input type="file" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="skpicInput" wire:model="sertifikat_kemenkumham">
-                                            @error('sertifikat_kemenkumham') <span class="text-red-500">{{ $message }}</span>@enderror
-                                        </div>
-                                    </div>
-                                    <div class="flex flex-wrap -mx-3 mb-6">
-                                        <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
-                                            <label for="skpicInput" class="block text-gray-700 text-sm font-bold mb-2">Sertifikat Dewan PERS (PDF Max 1MB):</label>
+                                            @error('sertifikat_kemenkumham') <span class="text-red-500">{{ $message }}</span>@enderror</td>
+                                <td>
+                                    <textarea readonly disabled class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="komentarInput" placeholder="Isi Komentar" wire:model="komentar"></textarea>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td> <label for="skpicInput" class="block text-gray-700 text-sm font-bold mb-2">Sertifikat Dewan PERS (PDF Max 1MB):</label>
                                             <a href="{{asset('storage/'.str_replace('public/','',$sertifikat_dewan_pers))}}" class="inline-flex bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" target="_blank">Lihat Dokumen</a>
                                             <input type="file" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="skpicInput" wire:model="sertifikat_dewan_pers">
-                                            @error('sertifikat_dewan_pers') <span class="text-red-500">{{ $message }}</span>@enderror
-                                        </div>
-                                    </div>
-                                    
-                                </div>
+                                            @error('sertifikat_dewan_pers') <span class="text-red-500">{{ $message }}</span>@enderror</td>
+                                <td>
+                                    <textarea readonly disabled class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="komentarInput" placeholder="Isi Komentar" wire:model="komentar"></textarea>
+                                </td>
+                            </tr>
+                        </tbody>
+                        </table>
+</div>
+</div>
                                 <div class="px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse">
                                     <span class="flex w-full sm:ml-3 sm:w-auto">
                                         <button wire:click.prevent="updateberkas()" type="button" class="inline-flex bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Save</button>
